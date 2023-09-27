@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:islami/ui/home/quran/chapter.dart';
+
+import '../../chabterDetails/chapter.dart';
 
 class ChapterTitleWidget extends StatelessWidget {
    ChapterTitleWidget({required this.index,required this.title, Key? key}) : super(key: key);
@@ -10,7 +11,8 @@ class ChapterTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return  InkWell(
         onTap: (){
-      Navigator.pushNamed(context, ChapterView.pageRaute,
+      Navigator.pushNamed(
+        context, ChapterView.pageRaute,
         arguments: Arges(index: index, title: title),
       );},
       child: Container(
@@ -18,10 +20,7 @@ class ChapterTitleWidget extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 24,
-            fontFamily: 'KOUFIBD',
-          ),
+          style: Theme.of(context).textTheme.titleMedium
         ),
       ),
     );

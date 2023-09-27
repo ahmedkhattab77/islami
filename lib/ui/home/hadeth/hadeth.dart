@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
+class Hadeth {
+  String title ;
+  String contant;
 
-class HadethView extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return  Scaffold();
-  }
+  Hadeth({required this.contant,
+  required this.title,
+  });
 }
