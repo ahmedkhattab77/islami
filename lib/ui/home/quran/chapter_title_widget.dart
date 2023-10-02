@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:islami/ui/home/quran/chapter.dart';
+
+import '../../chabterDetails/chapter.dart';
 
 class ChapterTitleWidget extends StatelessWidget {
    ChapterTitleWidget({required this.index,required this.title, Key? key}) : super(key: key);

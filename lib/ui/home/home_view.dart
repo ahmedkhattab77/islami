@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ui/home/hadeth.dart';
+import 'package:islami/ui/home/hadeth/hadeth.dart';
 import 'package:islami/ui/home/quran/quran.dart';
-import 'package:islami/ui/home/radio.dart';
-import 'package:islami/ui/home/sebha.dart';
+import 'package:islami/ui/home/radio/radio.dart';
+import 'package:islami/ui/home/sebha/tasbeha.dart';
 
 class HomeView extends StatefulWidget {
   static const String pageRaute = ' home';
@@ -79,7 +79,7 @@ class _HomeViewState extends State<HomeView> {
   List<Widget> page = [
 
     QuranView(),
-    SebhaView(),
+    TasbehTab(),
     HadethView(),
     RadioView(),
   ];

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ui/home/quran/chapter.dart';
 import 'package:islami/ui/home/quran/chapter_title_widget.dart';
 
 class QuranView extends StatelessWidget {

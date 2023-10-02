@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islami/ui/chabterDetails/chapter.dart';
 import 'package:islami/ui/home/home_view.dart';
-import 'package:islami/ui/home/quran/chapter.dart';
 
 void main() {
   runApp(const MyApp());
