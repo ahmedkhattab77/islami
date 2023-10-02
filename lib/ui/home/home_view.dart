@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:islami/ui/home/hadeth/hadeth.dart';
+import 'package:islami/ui/home/hadeth/hadethTab.dart';
 import 'package:islami/ui/home/quran/quran.dart';
 import 'package:islami/ui/home/radio/radio.dart';
 import 'package:islami/ui/home/sebha/tasbeha.dart';
+import 'package:islami/ui/home/settings/settings_tab.dart';
 
 class HomeView extends StatefulWidget {
   static const String pageRaute = ' home';
@@ -25,11 +27,9 @@ class _HomeViewState extends State<HomeView> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
+          title:  Text(
             'اسلامي',
-            style: TextStyle(
-              fontFamily: 'KOUFIBD',
-            ),
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
         ),
         body: page[selectIndex],
@@ -70,6 +70,13 @@ class _HomeViewState extends State<HomeView> {
               backgroundColor: Theme.of(context).primaryColor,
               label: 'راديو',
             ),
+            BottomNavigationBarItem(
+              icon: const Icon(
+                Icons.settings,
+              ),
+              backgroundColor: Theme.of(context).primaryColor,
+              label: 'الاعدادات',
+            ),
           ],
         ),
       ),
@@ -80,7 +87,8 @@ class _HomeViewState extends State<HomeView> {
 
     QuranView(),
     TasbehTab(),
-    HadethView(),
+    HadethTabView(),
     RadioView(),
+    SettingsTab(),
   ];
 }

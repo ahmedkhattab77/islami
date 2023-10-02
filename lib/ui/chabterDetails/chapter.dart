@@ -26,20 +26,23 @@ class _ChapterViewState extends State<ChapterView> {
         ),
         child: Scaffold(
           appBar: AppBar(
-            title: Text(arges.title),
+            title: Text(arges.title,
+            style: Theme.of(context).textTheme.headlineSmall,),
           ),
           body: Container(
             alignment: Alignment.center,
             child:verses.isEmpty? const CircularProgressIndicator():
-            Card( 
-              margin: EdgeInsets.all(15),
+            Card(
+              margin: const EdgeInsets.all(15),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25)
+                borderRadius: BorderRadius.circular(25),
               ),
               child: ListView.builder(
                   itemBuilder: (context , index) => Text(
-                     '${verses[index]}{$index}',
-                    textAlign: TextAlign.end,style: TextStyle(fontSize: 20),
+                     '${verses[index]}{${index +1}}',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyMedium,
+
                   ),
                 itemCount: verses.length,
                ),

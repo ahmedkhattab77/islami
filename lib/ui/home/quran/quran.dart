@@ -10,6 +10,19 @@ class QuranView extends StatelessWidget {
           flex: 1,
           child: Image.asset('assets/images/qur2an_screen_logo.png'),
         ),
+        Container(
+          width: double.infinity,
+          alignment: Alignment.center,
+          child:  Text('اسم السوره',
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          decoration: BoxDecoration(
+              border: Border.symmetric(horizontal: BorderSide(
+                  color: Theme.of(context).primaryColor,
+                  width: 4
+              ))
+          ),
+        ),
         Expanded(
           flex: 3,
           child: ListView.separated(
