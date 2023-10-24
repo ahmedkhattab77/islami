@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/ui/home/hadeth/hadeth.dart';
 import 'package:islami/ui/home/hadeth/hadethTitel.dart';
 
-class HadethTabView extends StatelessWidget {
+class HadethTabView extends StatefulWidget {
+  @override
+  State<HadethTabView> createState() => _HadethTabViewState();
+}
+
+class _HadethTabViewState extends State<HadethTabView> {
   @override
   Widget build(BuildContext context) {
     if (allHadeth.isEmpty) {
@@ -30,7 +36,7 @@ class HadethTabView extends StatelessWidget {
             ),
           ),
           child: Text(
-            'احاديث',
+            AppLocalizations.of(context)!.hadeth,
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
@@ -55,6 +61,7 @@ class HadethTabView extends StatelessWidget {
   }
 
   List<Hadeth> allHadeth = [];
+
   void lodingFile() async {
     String fileContant =
         await rootBundle.loadString('assets/files/ahadeth.txt');
@@ -70,6 +77,7 @@ class HadethTabView extends StatelessWidget {
       Hadeth hadeth = Hadeth(contant: contant, title: title);
 
       allHadeth.add(hadeth);
+      setState(() {});
     }
   }
 }

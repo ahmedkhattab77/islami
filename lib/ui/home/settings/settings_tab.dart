@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/ui/home/settings/language_bottom_sheet.dart';
 import 'package:islami/ui/home/settings/theme_bottom_shet.dart';
+import 'package:provider/provider.dart';
+
+import '../../../Provider/settingsProvider.dart';
 
 class SettingsTab extends StatefulWidget {
   @override
@@ -10,6 +14,8 @@ class SettingsTab extends StatefulWidget {
 class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<SettingsProvider>(context);
+
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 18,
@@ -18,9 +24,9 @@ class _SettingsTabState extends State<SettingsTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Text(
-            'Theme',
-            style:Theme.of(context).textTheme.titleMedium,
+          Text(
+            AppLocalizations.of(context)!.theme,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           InkWell(
             onTap: (){
@@ -37,18 +43,19 @@ class _SettingsTabState extends State<SettingsTab> {
               ),
               padding: EdgeInsets.all(12),
               width: double.infinity,
-              child:  Text(
-                'Light',
-                style:Theme.of(context).textTheme.titleMedium
-              ),
+              child: Text(
+                  settingsProvider.enableDark()
+                      ? AppLocalizations.of(context)!.dark
+                      : AppLocalizations.of(context)!.light,
+                  style: Theme.of(context).textTheme.titleMedium),
             ),
           ),
           const SizedBox(
             height: 20,
           ),
-           Text(
-            'Language',
-            style:  Theme.of(context).textTheme.titleMedium,
+          Text(
+            AppLocalizations.of(context)!.language,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           InkWell(
             onTap: (){
@@ -66,9 +73,10 @@ class _SettingsTabState extends State<SettingsTab> {
               ),
               padding: const EdgeInsets.all(12),
               child:  Text(
-                'English',
-                style: Theme.of(context).textTheme.titleMedium
-              ),
+                  settingsProvider.arabicEnable()
+                      ? AppLocalizations.of(context)!.arabic
+                      : AppLocalizations.of(context)!.english,
+                  style: Theme.of(context).textTheme.titleMedium),
             ),
           ),
         ],

@@ -98,18 +98,14 @@ class MyTheme{
         color: darkPrimary,
     ),
     bottomNavigationBarTheme:const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.black,
+        selectedItemColor: lightPrimary,
         unselectedItemColor: Colors.white,
-        selectedIconTheme: IconThemeData(
-            size: 34
-        )
-    ),
+        selectedIconTheme: IconThemeData(size: 34)),
 
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme:const AppBarTheme(
         iconTheme: IconThemeData(
-            color: Colors.black
-        ),
+            color: lightPrimary),
         centerTitle: true,
         backgroundColor:  Colors.transparent,
         titleTextStyle: TextStyle(

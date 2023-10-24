@@ -1,0 +1,16 @@
+{
+  "app_name":"اسلامي",
+  "quran":"قران",
+  "hadeth":"حديث",
+  "tasbeh":"سبحه",
+  "radio":"راديو",
+  "hadeht_namber":"رقم الحديث",
+  "chapter_name":"اسم السوره",
+  "setting":"الاعدادات",
+  "theme":"السمه",
+  "dark":"ليلي",
+  "light":"نهاري",
+  "language":"لغه",
+    "arabic":"العربيه",
+    "english":"الانجليزيه"
+}

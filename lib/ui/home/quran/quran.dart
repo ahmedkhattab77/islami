@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/ui/home/quran/chapter_title_widget.dart';
 
 class QuranView extends StatelessWidget {
@@ -13,7 +14,8 @@ class QuranView extends StatelessWidget {
         Container(
           width: double.infinity,
           alignment: Alignment.center,
-          child:  Text('اسم السوره',
+          child: Text(
+            AppLocalizations.of(context)!.chapter_name,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           decoration: BoxDecoration(
