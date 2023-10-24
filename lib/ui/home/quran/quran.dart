@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ui/home/quran/chapter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/ui/home/quran/chapter_title_widget.dart';
 
 class QuranView extends StatelessWidget {
@@ -10,6 +10,20 @@ class QuranView extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Image.asset('assets/images/qur2an_screen_logo.png'),
+        ),
+        Container(
+          width: double.infinity,
+          alignment: Alignment.center,
+          child: Text(
+            AppLocalizations.of(context)!.chapter_name,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          decoration: BoxDecoration(
+              border: Border.symmetric(horizontal: BorderSide(
+                  color: Theme.of(context).primaryColor,
+                  width: 4
+              ))
+          ),
         ),
         Expanded(
           flex: 3,
